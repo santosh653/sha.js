@@ -1,3 +1,18 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : sha.js
+# Source Repo         : https://github.com/crypto-browserify/sha.js.git
+# Travis Job Link     : https://travis-ci.com/github/santosh653/sha.js
+# Created travis.yml  : No
+# Maintainer          : Santosh Kulkarni <santoshkulkarni70@gmail.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+
+arch:
+  - amd64
+  - ppc64le
 sudo: false
 os:
   - linux
@@ -14,4 +29,10 @@ matrix:
   include:
     - node_js: "7"
       env: TEST_SUITE=lint
+      arch: amd64
+    - node_js: "7"
+      env: TEST_SUITE=lint
+      arch: ppc64le
+
+      
 script: npm run $TEST_SUITE
